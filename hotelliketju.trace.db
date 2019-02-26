@@ -1,0 +1,974 @@
+2019-02-14 13:28:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "HUONE" not found; SQL statement:
+INSERT INTO Huone (numero, hinta, tyyppi) VALUES (?, ?, ?) [42102-197]
+2019-02-14 14:41:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "HUONE" not found; SQL statement:
+INSERT INTO Huone (numero, hinta, tyyppi) VALUES (?, ?, ?) [42102-197]
+2019-02-14 14:47:02 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "tyyppi" not found [42122-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3174)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3247)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:310)
+	at com.zaxxer.hikari.pool.HikariProxyResultSet.getString(HikariProxyResultSet.java)
+	at varausjarjestelma.Varausjarjestelma.lambda$lisaaHuone$0(Varausjarjestelma.java:18)
+	at org.springframework.jdbc.core.RowMapperResultSetExtractor.extractData(RowMapperResultSetExtractor.java:94)
+	at org.springframework.jdbc.core.RowMapperResultSetExtractor.extractData(RowMapperResultSetExtractor.java:61)
+	at org.springframework.jdbc.core.JdbcTemplate$1QueryStatementCallback.doInStatement(JdbcTemplate.java:440)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:376)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:452)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:462)
+	at varausjarjestelma.Varausjarjestelma.lisaaHuone(Varausjarjestelma.java:18)
+	at varausjarjestelma.Tekstikayttoliittyma.lisaaHuone(Tekstikayttoliittyma.java:64)
+	at varausjarjestelma.Tekstikayttoliittyma.kaynnista(Tekstikayttoliittyma.java:38)
+	at varausjarjestelma.VarausjarjestelmaSovellus.run(VarausjarjestelmaSovellus.java:30)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:813)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:797)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at varausjarjestelma.VarausjarjestelmaSovellus.main(VarausjarjestelmaSovellus.java:20)
+2019-02-14 14:48:21 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "hinta" not found [42122-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3174)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3247)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:310)
+	at com.zaxxer.hikari.pool.HikariProxyResultSet.getString(HikariProxyResultSet.java)
+	at varausjarjestelma.Varausjarjestelma.lambda$lisaaHuone$0(Varausjarjestelma.java:18)
+	at org.springframework.jdbc.core.RowMapperResultSetExtractor.extractData(RowMapperResultSetExtractor.java:94)
+	at org.springframework.jdbc.core.RowMapperResultSetExtractor.extractData(RowMapperResultSetExtractor.java:61)
+	at org.springframework.jdbc.core.JdbcTemplate$1QueryStatementCallback.doInStatement(JdbcTemplate.java:440)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:376)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:452)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:462)
+	at varausjarjestelma.Varausjarjestelma.lisaaHuone(Varausjarjestelma.java:18)
+	at varausjarjestelma.Tekstikayttoliittyma.lisaaHuone(Tekstikayttoliittyma.java:64)
+	at varausjarjestelma.Tekstikayttoliittyma.kaynnista(Tekstikayttoliittyma.java:38)
+	at varausjarjestelma.VarausjarjestelmaSovellus.run(VarausjarjestelmaSovellus.java:30)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:813)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:797)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at varausjarjestelma.VarausjarjestelmaSovellus.main(VarausjarjestelmaSovellus.java:20)
+2019-02-14 15:04:08 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE VARAUS (ID INTEGER, ALKUPVM DATE, LOPPUPVM DATE, HUONETYYPPI VARCHAR(50), PAIVAHINTA INTEGER, FOREIGN KEY (ASIAKAS_ID) REFERENCES ASIAKAS(ID), FOREIGN KEY (HUONE_ID) REFERENCES HUONE(NUMERO), PRIMARY KEY (ID)))[*]; "; SQL statement:
+CREATE TABLE Varaus (id INTEGER, alkupvm DATE, loppupvm DATE, huonetyyppi VARCHAR(50), paivahinta INTEGER, FOREIGN KEY (asiakas_id) REFERENCES Asiakas(id), FOREIGN KEY (huone_id) REFERENCES Huone(numero), PRIMARY KEY (id))); [42000-197]
+2019-02-14 15:09:08 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE VARAUS (ID INTEGER, ALKUPVM DATE, LOPPUPVM DATE, HUONETYYPPI VARCHAR(50), PAIVAHINTA INTEGER, FOREIGN KEY (ASIAKAS_ID) REFERENCES ASIAKAS(ID), FOREIGN KEY (HUONE_ID) REFERENCES HUONE(NUMERO), PRIMARY KEY (ID)))[*]; "; SQL statement:
+CREATE TABLE Varaus (id INTEGER, alkupvm DATE, loppupvm DATE, huonetyyppi VARCHAR(50), paivahinta INTEGER, FOREIGN KEY (asiakas_id) REFERENCES Asiakas(id), FOREIGN KEY (huone_id) REFERENCES Huone(numero), PRIMARY KEY (id))); [42000-197]
+2019-02-14 15:12:33 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE VARAUS (ID INTEGER, ALKUPVM DATE, LOPPUPVM DATE, HUONETYYPPI VARCHAR(50), PAIVAHINTA INTEGER, FOREIGN KEY (ASIAKAS_ID) REFERENCES ASIAKAS(ID), FOREIGN KEY (HUONE_ID) REFERENCES HUONE(NUMERO), PRIMARY KEY (ID)))[*]; "; SQL statement:
+CREATE TABLE Varaus (id INTEGER, alkupvm DATE, loppupvm DATE, huonetyyppi VARCHAR(50), paivahinta INTEGER, FOREIGN KEY (asiakas_id) REFERENCES Asiakas(id), FOREIGN KEY (huone_id) REFERENCES Huone(numero), PRIMARY KEY (id))); [42000-197]
+2019-02-14 15:13:22 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE VARAUS (ID INTEGER, ALKUPVM DATE, LOPPUPVM DATE, HUONETYYPPI VARCHAR(50), PAIVAHINTA INTEGER, FOREIGN KEY (ASIAKAS_ID) REFERENCES ASIAKAS(ID), FOREIGN KEY (HUONE_ID) REFERENCES HUONE(NUMERO), PRIMARY KEY (ID)))[*]; "; SQL statement:
+CREATE TABLE Varaus (id INTEGER, alkupvm DATE, loppupvm DATE, huonetyyppi VARCHAR(50), paivahinta INTEGER, FOREIGN KEY (asiakas_id) REFERENCES Asiakas(id), FOREIGN KEY (huone_id) REFERENCES Huone(numero), PRIMARY KEY (id))); [42000-197]
+2019-02-14 15:16:18 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE VARAUS (ID INTEGER, ALKUPVM DATE, LOPPUPVM DATE, HUONETYYPPI VARCHAR(50), PAIVAHINTA INTEGER, FOREIGN KEY (ASIAKAS_ID) REFERENCES ASIAKAS(ID), FOREIGN KEY (HUONE_ID) REFERENCES HUONE(NUMERO), PRIMARY KEY (ID)))[*]; "; SQL statement:
+CREATE TABLE Varaus (id INTEGER, alkupvm DATE, loppupvm DATE, huonetyyppi VARCHAR(50), paivahinta INTEGER, FOREIGN KEY (asiakas_id) REFERENCES Asiakas(id), FOREIGN KEY (huone_id) REFERENCES Huone(numero), PRIMARY KEY (id))); [42000-197]
+2019-02-14 15:18:55 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE VARAUS (ID INTEGER, ALKUPVM DATE, LOPPUPVM DATE, HUONETYYPPI VARCHAR(50), PAIVAHINTA INTEGER, FOREIGN KEY (ASIAKAS_ID) REFERENCES ASIAKAS(ID), FOREIGN KEY (HUONE_ID) REFERENCES HUONE(NUMERO), PRIMARY KEY (ID)))[*]; "; SQL statement:
+CREATE TABLE Varaus (id INTEGER, alkupvm DATE, loppupvm DATE, huonetyyppi VARCHAR(50), paivahinta INTEGER, FOREIGN KEY (asiakas_id) REFERENCES Asiakas(id), FOREIGN KEY (huone_id) REFERENCES Huone(numero), PRIMARY KEY (id))); [42000-197]
+2019-02-14 15:36:08 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE VARAUS (ID INTEGER, ALKUPVM DATE, LOPPUPVM DATE, HUONETYYPPI VARCHAR(50), PAIVAHINTA INTEGER, FOREIGN KEY (ASIAKAS_ID) REFERENCES ASIAKAS(ID), FOREIGN KEY (HUONE_ID) REFERENCES HUONE(NUMERO), PRIMARY KEY (ID)))[*]; "; SQL statement:
+CREATE TABLE Varaus (id INTEGER, alkupvm DATE, loppupvm DATE, huonetyyppi VARCHAR(50), paivahinta INTEGER, FOREIGN KEY (asiakas_id) REFERENCES Asiakas(id), FOREIGN KEY (huone_id) REFERENCES Huone(numero), PRIMARY KEY (id))); [42000-197]
+2019-02-14 16:00:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE VARAUS (ID INTEGER, ALKUPVM DATE, LOPPUPVM DATE, HUONETYYPPI VARCHAR(50), PAIVAHINTA INTEGER, FOREIGN KEY (ASIAKAS_ID) REFERENCES ASIAKAS(ID), FOREIGN KEY (HUONE_ID) REFERENCES HUONE(NUMERO), PRIMARY KEY (ID)))[*]; "; SQL statement:
+CREATE TABLE Varaus (id INTEGER, alkupvm DATE, loppupvm DATE, huonetyyppi VARCHAR(50), paivahinta INTEGER, FOREIGN KEY (asiakas_id) REFERENCES Asiakas(id), FOREIGN KEY (huone_id) REFERENCES Huone(numero), PRIMARY KEY (id))); [42000-197]
+2019-02-14 16:01:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "IF[*] NOT EXISTS (SELECT 1 FROM ASIAKAS WHERE NIMI = ?) INSERT INTO ASIAKAS (NIMI, NUMERO, EMAIL) VALUES (?, ?, ?) "; expected "INSERT, {"; SQL statement:
+IF NOT EXISTS (SELECT 1 FROM Asiakas WHERE nimi = ?) INSERT INTO Asiakas (nimi, numero, email) VALUES (?, ?, ?) [42001-197]
+2019-02-14 16:03:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE VARAUS (ID INTEGER, ALKUPVM DATE, LOPPUPVM DATE, HUONETYYPPI VARCHAR(50), PAIVAHINTA INTEGER, FOREIGN KEY (ASIAKAS_ID) REFERENCES ASIAKAS(ID), FOREIGN KEY (HUONE_ID) REFERENCES HUONE(NUMERO), PRIMARY KEY (ID)))[*]; "; SQL statement:
+CREATE TABLE Varaus (id INTEGER, alkupvm DATE, loppupvm DATE, huonetyyppi VARCHAR(50), paivahinta INTEGER, FOREIGN KEY (asiakas_id) REFERENCES Asiakas(id), FOREIGN KEY (huone_id) REFERENCES Huone(numero), PRIMARY KEY (id))); [42000-197]
+2019-02-14 16:04:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ASIAKAS" not found; SQL statement:
+INSERT INTO Asiakas (nimi, numero, email) VALUES (?, ?, ?) WHERE NOT EXISTS (SELECT * FROM Asiakas WHERE nimi = ?) [42102-197]
+2019-02-14 16:08:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE VARAUS (ID INTEGER, ALKUPVM DATE, LOPPUPVM DATE, HUONETYYPPI VARCHAR(50), PAIVAHINTA INTEGER, FOREIGN KEY (ASIAKAS_ID) REFERENCES ASIAKAS(ID), FOREIGN KEY (HUONE_ID) REFERENCES HUONE(NUMERO), PRIMARY KEY (ID)))[*]; "; SQL statement:
+CREATE TABLE Varaus (id INTEGER, alkupvm DATE, loppupvm DATE, huonetyyppi VARCHAR(50), paivahinta INTEGER, FOREIGN KEY (asiakas_id) REFERENCES Asiakas(id), FOREIGN KEY (huone_id) REFERENCES Huone(numero), PRIMARY KEY (id))); [42000-197]
+2019-02-14 16:08:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Invalid value "1" for parameter "parameterIndex" [90008-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.getInvalidValueException(DbException.java:240)
+	at org.h2.jdbc.JdbcPreparedStatement.setParameter(JdbcPreparedStatement.java:1560)
+	at org.h2.jdbc.JdbcPreparedStatement.setString(JdbcPreparedStatement.java:426)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.setString(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.StatementCreatorUtils.setValue(StatementCreatorUtils.java:400)
+	at org.springframework.jdbc.core.StatementCreatorUtils.setParameterValueInternal(StatementCreatorUtils.java:232)
+	at org.springframework.jdbc.core.StatementCreatorUtils.setParameterValue(StatementCreatorUtils.java:163)
+	at org.springframework.jdbc.core.ArgumentPreparedStatementSetter.doSetValue(ArgumentPreparedStatementSetter.java:69)
+	at org.springframework.jdbc.core.ArgumentPreparedStatementSetter.setValues(ArgumentPreparedStatementSetter.java:50)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$0(JdbcTemplate.java:865)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:617)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:862)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:917)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:927)
+	at varausjarjestelma.Varausjarjestelma.lisaaAsiakas(Varausjarjestelma.java:24)
+	at varausjarjestelma.Tekstikayttoliittyma.lisaaHuone(Tekstikayttoliittyma.java:74)
+	at varausjarjestelma.Tekstikayttoliittyma.kaynnista(Tekstikayttoliittyma.java:38)
+	at varausjarjestelma.VarausjarjestelmaSovellus.run(VarausjarjestelmaSovellus.java:30)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:813)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:797)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at varausjarjestelma.VarausjarjestelmaSovellus.main(VarausjarjestelmaSovellus.java:20)
+2019-02-14 16:09:40 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE VARAUS (ID INTEGER, ALKUPVM DATE, LOPPUPVM DATE, HUONETYYPPI VARCHAR(50), PAIVAHINTA INTEGER, FOREIGN KEY (ASIAKAS_ID) REFERENCES ASIAKAS(ID), FOREIGN KEY (HUONE_ID) REFERENCES HUONE(NUMERO), PRIMARY KEY (ID)))[*]; "; SQL statement:
+CREATE TABLE Varaus (id INTEGER, alkupvm DATE, loppupvm DATE, huonetyyppi VARCHAR(50), paivahinta INTEGER, FOREIGN KEY (asiakas_id) REFERENCES Asiakas(id), FOREIGN KEY (huone_id) REFERENCES Huone(numero), PRIMARY KEY (id))); [42000-197]
+2019-02-14 16:09:54 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE VARAUS (ID INTEGER, ALKUPVM DATE, LOPPUPVM DATE, HUONETYYPPI VARCHAR(50), PAIVAHINTA INTEGER, FOREIGN KEY (ASIAKAS_ID) REFERENCES ASIAKAS(ID), FOREIGN KEY (HUONE_ID) REFERENCES HUONE(NUMERO), PRIMARY KEY (ID)))[*]; "; SQL statement:
+CREATE TABLE Varaus (id INTEGER, alkupvm DATE, loppupvm DATE, huonetyyppi VARCHAR(50), paivahinta INTEGER, FOREIGN KEY (asiakas_id) REFERENCES Asiakas(id), FOREIGN KEY (huone_id) REFERENCES Huone(numero), PRIMARY KEY (id))); [42000-197]
+2019-02-14 16:10:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Invalid value "1" for parameter "parameterIndex" [90008-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.getInvalidValueException(DbException.java:240)
+	at org.h2.jdbc.JdbcPreparedStatement.setParameter(JdbcPreparedStatement.java:1560)
+	at org.h2.jdbc.JdbcPreparedStatement.setString(JdbcPreparedStatement.java:426)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.setString(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.StatementCreatorUtils.setValue(StatementCreatorUtils.java:400)
+	at org.springframework.jdbc.core.StatementCreatorUtils.setParameterValueInternal(StatementCreatorUtils.java:232)
+	at org.springframework.jdbc.core.StatementCreatorUtils.setParameterValue(StatementCreatorUtils.java:163)
+	at org.springframework.jdbc.core.ArgumentPreparedStatementSetter.doSetValue(ArgumentPreparedStatementSetter.java:69)
+	at org.springframework.jdbc.core.ArgumentPreparedStatementSetter.setValues(ArgumentPreparedStatementSetter.java:50)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$0(JdbcTemplate.java:865)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:617)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:862)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:917)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:927)
+	at varausjarjestelma.Varausjarjestelma.lisaaAsiakas(Varausjarjestelma.java:24)
+	at varausjarjestelma.Tekstikayttoliittyma.lisaaHuone(Tekstikayttoliittyma.java:74)
+	at varausjarjestelma.Tekstikayttoliittyma.kaynnista(Tekstikayttoliittyma.java:38)
+	at varausjarjestelma.VarausjarjestelmaSovellus.run(VarausjarjestelmaSovellus.java:30)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:813)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:797)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at varausjarjestelma.VarausjarjestelmaSovellus.main(VarausjarjestelmaSovellus.java:20)
+2019-02-14 16:10:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE VARAUS (ID INTEGER, ALKUPVM DATE, LOPPUPVM DATE, HUONETYYPPI VARCHAR(50), PAIVAHINTA INTEGER, FOREIGN KEY (ASIAKAS_ID) REFERENCES ASIAKAS(ID), FOREIGN KEY (HUONE_ID) REFERENCES HUONE(NUMERO), PRIMARY KEY (ID)))[*]; "; SQL statement:
+CREATE TABLE Varaus (id INTEGER, alkupvm DATE, loppupvm DATE, huonetyyppi VARCHAR(50), paivahinta INTEGER, FOREIGN KEY (asiakas_id) REFERENCES Asiakas(id), FOREIGN KEY (huone_id) REFERENCES Huone(numero), PRIMARY KEY (id))); [42000-197]
+2019-02-14 16:10:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE VARAUS (ID INTEGER, ALKUPVM DATE, LOPPUPVM DATE, HUONETYYPPI VARCHAR(50), PAIVAHINTA INTEGER, FOREIGN KEY (ASIAKAS_ID) REFERENCES ASIAKAS(ID), FOREIGN KEY (HUONE_ID) REFERENCES HUONE(NUMERO), PRIMARY KEY (ID)))[*]; "; SQL statement:
+CREATE TABLE Varaus (id INTEGER, alkupvm DATE, loppupvm DATE, huonetyyppi VARCHAR(50), paivahinta INTEGER, FOREIGN KEY (asiakas_id) REFERENCES Asiakas(id), FOREIGN KEY (huone_id) REFERENCES Huone(numero), PRIMARY KEY (id))); [42000-197]
+2019-02-14 16:11:10 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Invalid value "1" for parameter "parameterIndex" [90008-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.getInvalidValueException(DbException.java:240)
+	at org.h2.jdbc.JdbcPreparedStatement.setParameter(JdbcPreparedStatement.java:1560)
+	at org.h2.jdbc.JdbcPreparedStatement.setString(JdbcPreparedStatement.java:426)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.setString(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.StatementCreatorUtils.setValue(StatementCreatorUtils.java:400)
+	at org.springframework.jdbc.core.StatementCreatorUtils.setParameterValueInternal(StatementCreatorUtils.java:232)
+	at org.springframework.jdbc.core.StatementCreatorUtils.setParameterValue(StatementCreatorUtils.java:163)
+	at org.springframework.jdbc.core.ArgumentPreparedStatementSetter.doSetValue(ArgumentPreparedStatementSetter.java:69)
+	at org.springframework.jdbc.core.ArgumentPreparedStatementSetter.setValues(ArgumentPreparedStatementSetter.java:50)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$0(JdbcTemplate.java:865)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:617)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:862)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:917)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:927)
+	at varausjarjestelma.Varausjarjestelma.lisaaAsiakas(Varausjarjestelma.java:24)
+	at varausjarjestelma.Tekstikayttoliittyma.lisaaHuone(Tekstikayttoliittyma.java:74)
+	at varausjarjestelma.Tekstikayttoliittyma.kaynnista(Tekstikayttoliittyma.java:38)
+	at varausjarjestelma.VarausjarjestelmaSovellus.run(VarausjarjestelmaSovellus.java:30)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:813)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:797)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at varausjarjestelma.VarausjarjestelmaSovellus.main(VarausjarjestelmaSovellus.java:20)
+2019-02-14 16:12:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE VARAUS (ID INTEGER, ALKUPVM DATE, LOPPUPVM DATE, HUONETYYPPI VARCHAR(50), PAIVAHINTA INTEGER, FOREIGN KEY (ASIAKAS_ID) REFERENCES ASIAKAS(ID), FOREIGN KEY (HUONE_ID) REFERENCES HUONE(NUMERO), PRIMARY KEY (ID)))[*]; "; SQL statement:
+CREATE TABLE Varaus (id INTEGER, alkupvm DATE, loppupvm DATE, huonetyyppi VARCHAR(50), paivahinta INTEGER, FOREIGN KEY (asiakas_id) REFERENCES Asiakas(id), FOREIGN KEY (huone_id) REFERENCES Huone(numero), PRIMARY KEY (id))); [42000-197]
+2019-02-14 16:12:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE VARAUS (ID INTEGER, ALKUPVM DATE, LOPPUPVM DATE, HUONETYYPPI VARCHAR(50), PAIVAHINTA INTEGER, FOREIGN KEY (ASIAKAS_ID) REFERENCES ASIAKAS(ID), FOREIGN KEY (HUONE_ID) REFERENCES HUONE(NUMERO), PRIMARY KEY (ID)))[*]; "; SQL statement:
+CREATE TABLE Varaus (id INTEGER, alkupvm DATE, loppupvm DATE, huonetyyppi VARCHAR(50), paivahinta INTEGER, FOREIGN KEY (asiakas_id) REFERENCES Asiakas(id), FOREIGN KEY (huone_id) REFERENCES Huone(numero), PRIMARY KEY (id))); [42000-197]
+2019-02-14 16:12:37 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Invalid value "1" for parameter "parameterIndex" [90008-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.getInvalidValueException(DbException.java:240)
+	at org.h2.jdbc.JdbcPreparedStatement.setParameter(JdbcPreparedStatement.java:1560)
+	at org.h2.jdbc.JdbcPreparedStatement.setString(JdbcPreparedStatement.java:426)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.setString(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.StatementCreatorUtils.setValue(StatementCreatorUtils.java:400)
+	at org.springframework.jdbc.core.StatementCreatorUtils.setParameterValueInternal(StatementCreatorUtils.java:232)
+	at org.springframework.jdbc.core.StatementCreatorUtils.setParameterValue(StatementCreatorUtils.java:163)
+	at org.springframework.jdbc.core.ArgumentPreparedStatementSetter.doSetValue(ArgumentPreparedStatementSetter.java:69)
+	at org.springframework.jdbc.core.ArgumentPreparedStatementSetter.setValues(ArgumentPreparedStatementSetter.java:50)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$0(JdbcTemplate.java:865)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:617)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:862)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:917)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:927)
+	at varausjarjestelma.Varausjarjestelma.lisaaAsiakas(Varausjarjestelma.java:24)
+	at varausjarjestelma.Tekstikayttoliittyma.lisaaHuone(Tekstikayttoliittyma.java:74)
+	at varausjarjestelma.Tekstikayttoliittyma.kaynnista(Tekstikayttoliittyma.java:38)
+	at varausjarjestelma.VarausjarjestelmaSovellus.run(VarausjarjestelmaSovellus.java:30)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:813)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:797)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at varausjarjestelma.VarausjarjestelmaSovellus.main(VarausjarjestelmaSovellus.java:20)
+2019-02-14 16:16:03 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE VARAUS (ID INTEGER, ALKUPVM DATE, LOPPUPVM DATE, HUONETYYPPI VARCHAR(50), PAIVAHINTA INTEGER, FOREIGN KEY (ASIAKAS_ID) REFERENCES ASIAKAS(ID), FOREIGN KEY (HUONE_ID) REFERENCES HUONE(NUMERO), PRIMARY KEY (ID)))[*]; "; SQL statement:
+CREATE TABLE Varaus (id INTEGER, alkupvm DATE, loppupvm DATE, huonetyyppi VARCHAR(50), paivahinta INTEGER, FOREIGN KEY (asiakas_id) REFERENCES Asiakas(id), FOREIGN KEY (huone_id) REFERENCES Huone(numero), PRIMARY KEY (id))); [42000-197]
+2019-02-14 16:16:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ASIAKAS" not found; SQL statement:
+INSERT INTO Asiakas (nimi, numero, email) VALUES (?, ?, ?) [42102-197]
+2019-02-14 16:17:44 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE VARAUS (ID INTEGER, ALKUPVM DATE, LOPPUPVM DATE, HUONETYYPPI VARCHAR(50), PAIVAHINTA INTEGER, FOREIGN KEY (ASIAKAS_ID) REFERENCES ASIAKAS(ID), FOREIGN KEY (HUONE_ID) REFERENCES HUONE(NUMERO), PRIMARY KEY (ID)))[*]; "; SQL statement:
+CREATE TABLE Varaus (id INTEGER, alkupvm DATE, loppupvm DATE, huonetyyppi VARCHAR(50), paivahinta INTEGER, FOREIGN KEY (asiakas_id) REFERENCES Asiakas(id), FOREIGN KEY (huone_id) REFERENCES Huone(numero), PRIMARY KEY (id))); [42000-197]
+2019-02-14 16:17:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ASIAKAS" not found; SQL statement:
+INSERT INTO Asiakas (nimi, numero, email) VALUES (?, ?, ?) [42102-197]
+2019-02-15 11:54:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE VARAUS (ID INTEGER, ALKUPVM DATE, LOPPUPVM DATE, HUONETYYPPI VARCHAR(50), PAIVAHINTA INTEGER, FOREIGN KEY (ASIAKAS_ID) REFERENCES ASIAKAS(ID), FOREIGN KEY (HUONE_ID) REFERENCES HUONE(NUMERO), PRIMARY KEY (ID)))[*]; "; SQL statement:
+CREATE TABLE Varaus (id INTEGER, alkupvm DATE, loppupvm DATE, huonetyyppi VARCHAR(50), paivahinta INTEGER, FOREIGN KEY (asiakas_id) REFERENCES Asiakas(id), FOREIGN KEY (huone_id) REFERENCES Huone(numero), PRIMARY KEY (id))); [42000-197]
+2019-02-15 11:54:43 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "ASIAKAS" not found; SQL statement:
+INSERT INTO Asiakas (nimi, numero, email) VALUES (?, ?, ?) [42102-197]
+2019-02-15 11:58:42 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE VARAUS (ID INTEGER, ALKUPVM DATE, LOPPUPVM DATE, HUONETYYPPI VARCHAR(50), PAIVAHINTA INTEGER, FOREIGN KEY (ASIAKAS_ID) REFERENCES ASIAKAS(ID), FOREIGN KEY (HUONE_ID) REFERENCES HUONE(NUMERO), PRIMARY KEY (ID)))[*]; "; SQL statement:
+CREATE TABLE Varaus (id INTEGER, alkupvm DATE, loppupvm DATE, huonetyyppi VARCHAR(50), paivahinta INTEGER, FOREIGN KEY (asiakas_id) REFERENCES Asiakas(id), FOREIGN KEY (huone_id) REFERENCES Huone(numero), PRIMARY KEY (id))); [42000-197]
+2019-02-15 12:04:31 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "NUMERO" not found; SQL statement:
+INSERT INTO Asiakas (nimi, numero, email) VALUES (?, ?, ?) [42122-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.table.Table.getColumn(Table.java:682)
+	at org.h2.command.Parser.parseColumn(Parser.java:936)
+	at org.h2.command.Parser.parseColumnList(Parser.java:920)
+	at org.h2.command.Parser.parseInsertGivenTable(Parser.java:1258)
+	at org.h2.command.Parser.parseInsert(Parser.java:1222)
+	at org.h2.command.Parser.parsePrepared(Parser.java:431)
+	at org.h2.command.Parser.parse(Parser.java:335)
+	at org.h2.command.Parser.parse(Parser.java:307)
+	at org.h2.command.Parser.prepareCommand(Parser.java:278)
+	at org.h2.engine.Session.prepareLocal(Session.java:611)
+	at org.h2.engine.Session.prepareCommand(Session.java:549)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1247)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:76)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:304)
+	at com.zaxxer.hikari.pool.ProxyConnection.prepareStatement(ProxyConnection.java:311)
+	at com.zaxxer.hikari.pool.HikariProxyConnection.prepareStatement(HikariProxyConnection.java)
+	at org.springframework.jdbc.core.JdbcTemplate$SimplePreparedStatementCreator.createPreparedStatement(JdbcTemplate.java:1557)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:615)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:862)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:917)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:927)
+	at varausjarjestelma.Varausjarjestelma.lisaaAsiakas(Varausjarjestelma.java:24)
+	at varausjarjestelma.Tekstikayttoliittyma.lisaaHuone(Tekstikayttoliittyma.java:74)
+	at varausjarjestelma.Tekstikayttoliittyma.kaynnista(Tekstikayttoliittyma.java:38)
+	at varausjarjestelma.VarausjarjestelmaSovellus.run(VarausjarjestelmaSovellus.java:29)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:813)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:797)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at varausjarjestelma.VarausjarjestelmaSovellus.main(VarausjarjestelmaSovellus.java:19)
+2019-02-15 12:14:51 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "NUMERO" not found; SQL statement:
+SELECT nimi, numero, email, varauksien_summa FROM Asiakas; [42122-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:150)
+	at org.h2.command.dml.Select.prepare(Select.java:858)
+	at org.h2.command.Parser.prepareCommand(Parser.java:283)
+	at org.h2.engine.Session.prepareLocal(Session.java:611)
+	at org.h2.engine.Session.prepareCommand(Session.java:549)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1247)
+	at org.h2.jdbc.JdbcStatement.executeQuery(JdbcStatement.java:78)
+	at com.zaxxer.hikari.pool.ProxyStatement.executeQuery(ProxyStatement.java:111)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.executeQuery(HikariProxyStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate$1QueryStatementCallback.doInStatement(JdbcTemplate.java:439)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:376)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:452)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:462)
+	at varausjarjestelma.Varausjarjestelma.lisaaAsiakas(Varausjarjestelma.java:26)
+	at varausjarjestelma.Tekstikayttoliittyma.lisaaHuone(Tekstikayttoliittyma.java:74)
+	at varausjarjestelma.Tekstikayttoliittyma.kaynnista(Tekstikayttoliittyma.java:38)
+	at varausjarjestelma.VarausjarjestelmaSovellus.run(VarausjarjestelmaSovellus.java:29)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:813)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:797)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at varausjarjestelma.VarausjarjestelmaSovellus.main(VarausjarjestelmaSovellus.java:19)
+2019-02-15 12:16:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "numero" not found [42122-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.jdbc.JdbcResultSet.getColumnIndex(JdbcResultSet.java:3148)
+	at org.h2.jdbc.JdbcResultSet.get(JdbcResultSet.java:3247)
+	at org.h2.jdbc.JdbcResultSet.getString(JdbcResultSet.java:310)
+	at com.zaxxer.hikari.pool.HikariProxyResultSet.getString(HikariProxyResultSet.java)
+	at varausjarjestelma.Varausjarjestelma.lambda$lisaaAsiakas$1(Varausjarjestelma.java:26)
+	at org.springframework.jdbc.core.RowMapperResultSetExtractor.extractData(RowMapperResultSetExtractor.java:94)
+	at org.springframework.jdbc.core.RowMapperResultSetExtractor.extractData(RowMapperResultSetExtractor.java:61)
+	at org.springframework.jdbc.core.JdbcTemplate$1QueryStatementCallback.doInStatement(JdbcTemplate.java:440)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:376)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:452)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:462)
+	at varausjarjestelma.Varausjarjestelma.lisaaAsiakas(Varausjarjestelma.java:26)
+	at varausjarjestelma.Tekstikayttoliittyma.lisaaHuone(Tekstikayttoliittyma.java:74)
+	at varausjarjestelma.Tekstikayttoliittyma.kaynnista(Tekstikayttoliittyma.java:38)
+	at varausjarjestelma.VarausjarjestelmaSovellus.run(VarausjarjestelmaSovellus.java:29)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:813)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:797)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at varausjarjestelma.VarausjarjestelmaSovellus.main(VarausjarjestelmaSovellus.java:19)
+2019-02-15 12:19:53 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "INSERT INTO ASIAKAS (NIMI, PUHELIN, EMAIL, VARAUKSIEN_SUMMA) VALUES (?, ?, ?), ?[*] "; SQL statement:
+INSERT INTO Asiakas (nimi, puhelin, email, varauksien_summa) VALUES (?, ?, ?), ? [42000-197]
+2019-02-15 12:40:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE VARAUS (ID INTEGER NOT NULL AUTO_INCREMENT, ALKUPVM DATE NOT NULL, LOPPUPVM DATE NOT NULL, HUONETYYPPI VARCHAR(50) NOT NULL, PAIVAHINTA INTEGER NOT NULL, FOREIGN KEY (ASIAKAS_ID) REFERENCES ASIAKAS(ID), FOREIGN KEY (HUONE_NUMERO) REFERENCES HUONE(NUMERO), PRIMARY KEY (ID)))[*]; "; SQL statement:
+CREATE TABLE Varaus (id INTEGER NOT NULL AUTO_INCREMENT, alkupvm DATE NOT NULL, loppupvm DATE NOT NULL, huonetyyppi VARCHAR(50) NOT NULL, paivahinta INTEGER NOT NULL, FOREIGN KEY (asiakas_id) REFERENCES Asiakas(id), FOREIGN KEY (huone_numero) REFERENCES Huone(numero), PRIMARY KEY (id))); [42000-197]
+2019-02-15 12:42:54 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE VARAUS (ID INTEGER NOT NULL AUTO_INCREMENT, ALKUPVM DATE NOT NULL, LOPPUPVM DATE NOT NULL, HUONETYYPPI VARCHAR(50) NOT NULL, PAIVAHINTA INTEGER NOT NULL, FOREIGN KEY (ASIAKAS_ID) REFERENCES ASIAKAS(ID), FOREIGN KEY (HUONE_NUMERO) REFERENCES HUONE(NUMERO), PRIMARY KEY (ID)))[*]; "; SQL statement:
+CREATE TABLE Varaus (id INTEGER NOT NULL AUTO_INCREMENT, alkupvm DATE NOT NULL, loppupvm DATE NOT NULL, huonetyyppi VARCHAR(50) NOT NULL, paivahinta INTEGER NOT NULL, FOREIGN KEY (asiakas_id) REFERENCES Asiakas(id), FOREIGN KEY (huone_numero) REFERENCES Huone(numero), PRIMARY KEY (id))); [42000-197]
+2019-02-15 12:49:14 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE VARAUS (ID INTEGER NOT NULL AUTO_INCREMENT, ALKUPVM DATE NOT NULL, LOPPUPVM DATE NOT NULL, HUONETYYPPI VARCHAR(50) NOT NULL, PAIVAHINTA INTEGER NOT NULL ASIAKAS_ID[*] INTEGER NOT NULL, HUONE_NUMERO INTEGER NOT NULL, FOREIGN KEY (ASIAKAS_ID) REFERENCES ASIAKAS(ID), FOREIGN KEY (HUONE_NUMERO) REFERENCES HUONE(NUMERO), PRIMARY KEY (ID))); "; expected "AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE Varaus (id INTEGER NOT NULL AUTO_INCREMENT, alkupvm DATE NOT NULL, loppupvm DATE NOT NULL, huonetyyppi VARCHAR(50) NOT NULL, paivahinta INTEGER NOT NULL asiakas_id INTEGER NOT NULL, huone_numero INTEGER NOT NULL, FOREIGN KEY (asiakas_id) REFERENCES Asiakas(id), FOREIGN KEY (huone_numero) REFERENCES Huone(numero), PRIMARY KEY (id))); [42001-197]
+2019-02-15 12:51:09 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE VARAUS (ID INTEGER NOT NULL AUTO_INCREMENT, ALKUPVM DATE NOT NULL, LOPPUPVM DATE NOT NULL, HUONETYYPPI VARCHAR(50) NOT NULL, PAIVAHINTA INTEGER NOT NULL ASIAKAS_ID[*] INTEGER NOT NULL, HUONE_NUMERO INTEGER NOT NULL, FOREIGN KEY (ASIAKAS_ID) REFERENCES ASIAKAS(ID), FOREIGN KEY (HUONE_NUMERO) REFERENCES HUONE(NUMERO), PRIMARY KEY (ID))); "; expected "AS, DEFAULT, GENERATED, ON, NOT, NULL, AUTO_INCREMENT, BIGSERIAL, SERIAL, IDENTITY, NULL_TO_DEFAULT, SEQUENCE, SELECTIVITY, COMMENT, CONSTRAINT, PRIMARY, UNIQUE, NOT, NULL, CHECK, REFERENCES, ,, )"; SQL statement:
+CREATE TABLE Varaus (id INTEGER NOT NULL AUTO_INCREMENT, alkupvm DATE NOT NULL, loppupvm DATE NOT NULL, huonetyyppi VARCHAR(50) NOT NULL, paivahinta INTEGER NOT NULL asiakas_id INTEGER NOT NULL, huone_numero INTEGER NOT NULL, FOREIGN KEY (asiakas_id) REFERENCES Asiakas(id), FOREIGN KEY (huone_numero) REFERENCES Huone(numero), PRIMARY KEY (id))); [42001-197]
+2019-02-15 12:53:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE VARAUS (ID INTEGER NOT NULL AUTO_INCREMENT, ALKUPVM DATE NOT NULL, LOPPUPVM DATE NOT NULL, HUONETYYPPI VARCHAR(50) NOT NULL, PAIVAHINTA INTEGER NOT NULL, ASIAKAS_ID INTEGER NOT NULL, HUONE_NUMERO INTEGER NOT NULL, FOREIGN KEY (ASIAKAS_ID) REFERENCES ASIAKAS(ID), FOREIGN KEY (HUONE_NUMERO) REFERENCES HUONE(NUMERO), PRIMARY KEY (ID)))[*]; "; SQL statement:
+CREATE TABLE Varaus (id INTEGER NOT NULL AUTO_INCREMENT, alkupvm DATE NOT NULL, loppupvm DATE NOT NULL, huonetyyppi VARCHAR(50) NOT NULL, paivahinta INTEGER NOT NULL, asiakas_id INTEGER NOT NULL, huone_numero INTEGER NOT NULL, FOREIGN KEY (asiakas_id) REFERENCES Asiakas(id), FOREIGN KEY (huone_numero) REFERENCES Huone(numero), PRIMARY KEY (id))); [42000-197]
+2019-02-19 14:10:24 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE VARAUS (ID INTEGER NOT NULL AUTO_INCREMENT, ALKUPVM DATE NOT NULL, LOPPUPVM DATE NOT NULL, HUONETYYPPI VARCHAR(50) NOT NULL, PAIVAHINTA INTEGER NOT NULL, ASIAKAS_ID INTEGER NOT NULL, HUONE_NUMERO INTEGER NOT NULL, FOREIGN KEY (ASIAKAS_ID) REFERENCES ASIAKAS(ID), FOREIGN KEY (HUONE_NUMERO) REFERENCES HUONE(NUMERO), PRIMARY KEY (ID)))[*]; "; SQL statement:
+CREATE TABLE Varaus (id INTEGER NOT NULL AUTO_INCREMENT, alkupvm DATE NOT NULL, loppupvm DATE NOT NULL, huonetyyppi VARCHAR(50) NOT NULL, paivahinta INTEGER NOT NULL, asiakas_id INTEGER NOT NULL, huone_numero INTEGER NOT NULL, FOREIGN KEY (asiakas_id) REFERENCES Asiakas(id), FOREIGN KEY (huone_numero) REFERENCES Huone(numero), PRIMARY KEY (id))); [42000-197]
+2019-02-19 14:11:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "VARAUS" not found; SQL statement:
+INSERT INTO Varaus (alkupvm, loppupvm, huonetyyppi, paivahinta, asiakas_id, huone_numero) VALUES (?, ?, ?, ?, ?, ?) [42102-197]
+2019-02-19 14:11:47 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE VARAUS (ID INTEGER NOT NULL AUTO_INCREMENT, ALKUPVM DATE NOT NULL, LOPPUPVM DATE NOT NULL, HUONETYYPPI VARCHAR(50) NOT NULL, PAIVAHINTA INTEGER NOT NULL, ASIAKAS_ID INTEGER NOT NULL, HUONE_NUMERO INTEGER NOT NULL, FOREIGN KEY (ASIAKAS_ID) REFERENCES ASIAKAS(ID), FOREIGN KEY (HUONE_NUMERO) REFERENCES HUONE(NUMERO), PRIMARY KEY (ID)))[*]; "; SQL statement:
+CREATE TABLE Varaus (id INTEGER NOT NULL AUTO_INCREMENT, alkupvm DATE NOT NULL, loppupvm DATE NOT NULL, huonetyyppi VARCHAR(50) NOT NULL, paivahinta INTEGER NOT NULL, asiakas_id INTEGER NOT NULL, huone_numero INTEGER NOT NULL, FOREIGN KEY (asiakas_id) REFERENCES Asiakas(id), FOREIGN KEY (huone_numero) REFERENCES Huone(numero), PRIMARY KEY (id))); [42000-197]
+2019-02-19 14:17:36 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE VARAUS (ID INTEGER NOT NULL AUTO_INCREMENT, ALKUPVM DATE NOT NULL, LOPPUPVM DATE NOT NULL, HUONETYYPPI VARCHAR(50) NOT NULL, PAIVAHINTA INTEGER NOT NULL, ASIAKAS_ID INTEGER NOT NULL, HUONE_NUMERO INTEGER NOT NULL, FOREIGN KEY (ASIAKAS_ID) REFERENCES ASIAKAS(ID), FOREIGN KEY (HUONE_NUMERO) REFERENCES HUONE(NUMERO), PRIMARY KEY (ID)))[*]; "; SQL statement:
+CREATE TABLE Varaus (id INTEGER NOT NULL AUTO_INCREMENT, alkupvm DATE NOT NULL, loppupvm DATE NOT NULL, huonetyyppi VARCHAR(50) NOT NULL, paivahinta INTEGER NOT NULL, asiakas_id INTEGER NOT NULL, huone_numero INTEGER NOT NULL, FOREIGN KEY (asiakas_id) REFERENCES Asiakas(id), FOREIGN KEY (huone_numero) REFERENCES Huone(numero), PRIMARY KEY (id))); [42000-197]
+2019-02-20 11:43:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE VARAUS (ID INTEGER NOT NULL AUTO_INCREMENT, ALKUPVM DATE NOT NULL, LOPPUPVM DATE NOT NULL, HUONETYYPPI VARCHAR(50) NOT NULL, PAIVAHINTA INTEGER NOT NULL, ASIAKAS_ID INTEGER NOT NULL, HUONE_NUMERO INTEGER NOT NULL, FOREIGN KEY (ASIAKAS_ID) REFERENCES ASIAKAS(ID), FOREIGN KEY (HUONE_NUMERO) REFERENCES HUONE(NUMERO), PRIMARY KEY (ID)))[*]; "; SQL statement:
+CREATE TABLE Varaus (id INTEGER NOT NULL AUTO_INCREMENT, alkupvm DATE NOT NULL, loppupvm DATE NOT NULL, huonetyyppi VARCHAR(50) NOT NULL, paivahinta INTEGER NOT NULL, asiakas_id INTEGER NOT NULL, huone_numero INTEGER NOT NULL, FOREIGN KEY (asiakas_id) REFERENCES Asiakas(id), FOREIGN KEY (huone_numero) REFERENCES Huone(numero), PRIMARY KEY (id))); [42000-197]
+2019-02-20 11:45:12 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE VARAUS (ID INTEGER NOT NULL AUTO_INCREMENT, ALKUPVM DATE NOT NULL, LOPPUPVM DATE NOT NULL, HUONETYYPPI VARCHAR(50) NOT NULL, PAIVAHINTA INTEGER NOT NULL, ASIAKAS_ID INTEGER NOT NULL, HUONE_NUMERO INTEGER NOT NULL, FOREIGN KEY (ASIAKAS_ID) REFERENCES ASIAKAS(ID), FOREIGN KEY (HUONE_NUMERO) REFERENCES HUONE(NUMERO), PRIMARY KEY (ID)))[*]; "; SQL statement:
+CREATE TABLE Varaus (id INTEGER NOT NULL AUTO_INCREMENT, alkupvm DATE NOT NULL, loppupvm DATE NOT NULL, huonetyyppi VARCHAR(50) NOT NULL, paivahinta INTEGER NOT NULL, asiakas_id INTEGER NOT NULL, huone_numero INTEGER NOT NULL, FOREIGN KEY (asiakas_id) REFERENCES Asiakas(id), FOREIGN KEY (huone_numero) REFERENCES Huone(numero), PRIMARY KEY (id))); [42000-197]
+2019-02-20 11:47:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "SELECT ALKUPVM, LOPPUPVM, TYYPPI, PAIVAHINTA,ASIAKAS.NIMI, ASIAKAS.EMAIL, ASIAKAS.PUHELIN,HUONE.NUMERO, HUONE.HINTA, HUONE.TYYPPIFROM VARAUS JOIN[*] ASIAKAS ON ASIAKAS.ID = VARAUS.ASIAKAS_ID JOIN HUONE ON HUONE.NUMERO = VARAUS.HUONE_NUMERO; "; SQL statement:
+SELECT alkupvm, loppupvm, tyyppi, paivahinta,Asiakas.nimi, Asiakas.email, Asiakas.puhelin,Huone.numero, Huone.hinta, Huone.tyyppiFROM Varaus JOIN Asiakas ON Asiakas.id = Varaus.asiakas_id JOIN Huone ON Huone.numero = Varaus.huone_numero; [42000-197]
+2019-02-20 11:50:47 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE VARAUS (ID INTEGER NOT NULL AUTO_INCREMENT, ALKUPVM DATE NOT NULL, LOPPUPVM DATE NOT NULL, HUONETYYPPI VARCHAR(50) NOT NULL, PAIVAHINTA INTEGER NOT NULL, ASIAKAS_ID INTEGER NOT NULL, HUONE_NUMERO INTEGER NOT NULL, FOREIGN KEY (ASIAKAS_ID) REFERENCES ASIAKAS(ID), FOREIGN KEY (HUONE_NUMERO) REFERENCES HUONE(NUMERO), PRIMARY KEY (ID)))[*]; "; SQL statement:
+CREATE TABLE Varaus (id INTEGER NOT NULL AUTO_INCREMENT, alkupvm DATE NOT NULL, loppupvm DATE NOT NULL, huonetyyppi VARCHAR(50) NOT NULL, paivahinta INTEGER NOT NULL, asiakas_id INTEGER NOT NULL, huone_numero INTEGER NOT NULL, FOREIGN KEY (asiakas_id) REFERENCES Asiakas(id), FOREIGN KEY (huone_numero) REFERENCES Huone(numero), PRIMARY KEY (id))); [42000-197]
+2019-02-20 11:51:01 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "VARAUS" not found; SQL statement:
+SELECT alkupvm, loppupvm, tyyppi, paivahinta,Asiakas.nimi, Asiakas.email, Asiakas.puhelin,Huone.numero, Huone.hinta, Huone.tyyppi FROM Varaus JOIN Asiakas ON Asiakas.id = Varaus.asiakas_id JOIN Huone ON Huone.numero = Varaus.huone_numero; [42102-197]
+2019-02-20 11:55:35 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE VARAUS (ID INTEGER NOT NULL AUTO_INCREMENT, ALKUPVM DATE NOT NULL, LOPPUPVM DATE NOT NULL, HUONETYYPPI VARCHAR(50) NOT NULL, PAIVAHINTA INTEGER NOT NULL, ASIAKAS_ID INTEGER NOT NULL, HUONE_NUMERO INTEGER NOT NULL, FOREIGN KEY (ASIAKAS_ID) REFERENCES ASIAKAS(ID), FOREIGN KEY (HUONE_NUMERO) REFERENCES HUONE(NUMERO), PRIMARY KEY (ID)))[*]; "; SQL statement:
+CREATE TABLE Varaus (id INTEGER NOT NULL AUTO_INCREMENT, alkupvm DATE NOT NULL, loppupvm DATE NOT NULL, huonetyyppi VARCHAR(50) NOT NULL, paivahinta INTEGER NOT NULL, asiakas_id INTEGER NOT NULL, huone_numero INTEGER NOT NULL, FOREIGN KEY (asiakas_id) REFERENCES Asiakas(id), FOREIGN KEY (huone_numero) REFERENCES Huone(numero), PRIMARY KEY (id))); [42000-197]
+2019-02-20 11:57:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE VARAUS (ID INTEGER NOT NULL AUTO_INCREMENT, ALKUPVM DATE NOT NULL, LOPPUPVM DATE NOT NULL, HUONETYYPPI VARCHAR(50) NOT NULL, PAIVAHINTA INTEGER NOT NULL, ASIAKAS_ID INTEGER NOT NULL, HUONE_NUMERO INTEGER NOT NULL, FOREIGN KEY (ASIAKAS_ID) REFERENCES ASIAKAS(ID), FOREIGN KEY (HUONE_NUMERO) REFERENCES HUONE(NUMERO), PRIMARY KEY (ID)))[*]; "; SQL statement:
+CREATE TABLE Varaus (id INTEGER NOT NULL AUTO_INCREMENT, alkupvm DATE NOT NULL, loppupvm DATE NOT NULL, huonetyyppi VARCHAR(50) NOT NULL, paivahinta INTEGER NOT NULL, asiakas_id INTEGER NOT NULL, huone_numero INTEGER NOT NULL, FOREIGN KEY (asiakas_id) REFERENCES Asiakas(id), FOREIGN KEY (huone_numero) REFERENCES Huone(numero), PRIMARY KEY (id))); [42000-197]
+2019-02-20 11:58:05 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE VARAUS (ID INTEGER NOT NULL AUTO_INCREMENT, ALKUPVM VARCHAR(50) NOT NULL, LOPPUPVM VARCHAR(50) NOT NULL, HUONETYYPPI VARCHAR(50) NOT NULL, PAIVAHINTA INTEGER NOT NULL, ASIAKAS_ID INTEGER NOT NULL, HUONE_NUMERO INTEGER NOT NULL, FOREIGN KEY (ASIAKAS_ID) REFERENCES ASIAKAS(ID), FOREIGN KEY (HUONE_NUMERO) REFERENCES HUONE(NUMERO), PRIMARY KEY (ID)))[*]; "; SQL statement:
+CREATE TABLE Varaus (id INTEGER NOT NULL AUTO_INCREMENT, alkupvm VARCHAR(50) NOT NULL, loppupvm VARCHAR(50) NOT NULL, huonetyyppi VARCHAR(50) NOT NULL, paivahinta INTEGER NOT NULL, asiakas_id INTEGER NOT NULL, huone_numero INTEGER NOT NULL, FOREIGN KEY (asiakas_id) REFERENCES Asiakas(id), FOREIGN KEY (huone_numero) REFERENCES Huone(numero), PRIMARY KEY (id))); [42000-197]
+2019-02-20 12:00:02 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Syntax error in SQL statement "CREATE TABLE VARAUS (ID INTEGER NOT NULL AUTO_INCREMENT, ALKUPVM DATE NOT NULL, LOPPUPVM DATE NOT NULL, HUONETYYPPI VARCHAR(50) NOT NULL, PAIVAHINTA INTEGER NOT NULL, ASIAKAS_ID INTEGER NOT NULL, HUONE_NUMERO INTEGER NOT NULL, PRIMARY KEY (ID), FOREIGN KEY (ASIAKAS_ID) REFERENCES ASIAKAS(ID), FOREIGN KEY (HUONE_NUMERO) REFERENCES HUONE(NUMERO)))[*]; "; SQL statement:
+CREATE TABLE Varaus (id INTEGER NOT NULL AUTO_INCREMENT, alkupvm DATE NOT NULL, loppupvm DATE NOT NULL, huonetyyppi VARCHAR(50) NOT NULL, paivahinta INTEGER NOT NULL, asiakas_id INTEGER NOT NULL, huone_numero INTEGER NOT NULL, PRIMARY KEY (id), FOREIGN KEY (asiakas_id) REFERENCES Asiakas(id), FOREIGN KEY (huone_numero) REFERENCES Huone(numero))); [42000-197]
+2019-02-21 12:11:59 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Serialization failed, cause: "java.io.NotSerializableException: org.springframework.jdbc.support.GeneratedKeyHolder" [90026-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357)
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.util.JdbcUtils.serialize(JdbcUtils.java:378)
+	at org.h2.value.ValueJavaObject.getNoCopy(ValueJavaObject.java:49)
+	at org.h2.value.DataType.convertToValue1(DataType.java:1162)
+	at org.h2.value.DataType.convertToValue(DataType.java:1044)
+	at org.h2.jdbc.JdbcPreparedStatement.setObject(JdbcPreparedStatement.java:534)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.setObject(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.StatementCreatorUtils.setValue(StatementCreatorUtils.java:411)
+	at org.springframework.jdbc.core.StatementCreatorUtils.setParameterValueInternal(StatementCreatorUtils.java:232)
+	at org.springframework.jdbc.core.StatementCreatorUtils.setParameterValue(StatementCreatorUtils.java:163)
+	at org.springframework.jdbc.core.ArgumentPreparedStatementSetter.doSetValue(ArgumentPreparedStatementSetter.java:69)
+	at org.springframework.jdbc.core.ArgumentPreparedStatementSetter.setValues(ArgumentPreparedStatementSetter.java:50)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$0(JdbcTemplate.java:865)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:617)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:862)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:917)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:927)
+	at varausjarjestelma.HuoneDao.create(HuoneDao.java:22)
+	at varausjarjestelma.Varausjarjestelma.lisaaHuone(Varausjarjestelma.java:33)
+	at varausjarjestelma.Tekstikayttoliittyma.lisaaHuone(Tekstikayttoliittyma.java:66)
+	at varausjarjestelma.Tekstikayttoliittyma.kaynnista(Tekstikayttoliittyma.java:39)
+	at varausjarjestelma.VarausjarjestelmaSovellus.run(VarausjarjestelmaSovellus.java:29)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:813)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:797)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at varausjarjestelma.VarausjarjestelmaSovellus.main(VarausjarjestelmaSovellus.java:19)
+Caused by: java.io.NotSerializableException: org.springframework.jdbc.support.GeneratedKeyHolder
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1184)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348)
+	at org.h2.util.JdbcUtils.serialize(JdbcUtils.java:375)
+	... 26 more
+2019-02-21 12:13:30 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Serialization failed, cause: "java.io.NotSerializableException: org.springframework.jdbc.support.GeneratedKeyHolder" [90026-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357)
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.util.JdbcUtils.serialize(JdbcUtils.java:378)
+	at org.h2.value.ValueJavaObject.getNoCopy(ValueJavaObject.java:49)
+	at org.h2.value.DataType.convertToValue1(DataType.java:1162)
+	at org.h2.value.DataType.convertToValue(DataType.java:1044)
+	at org.h2.jdbc.JdbcPreparedStatement.setObject(JdbcPreparedStatement.java:534)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.setObject(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.StatementCreatorUtils.setValue(StatementCreatorUtils.java:411)
+	at org.springframework.jdbc.core.StatementCreatorUtils.setParameterValueInternal(StatementCreatorUtils.java:232)
+	at org.springframework.jdbc.core.StatementCreatorUtils.setParameterValue(StatementCreatorUtils.java:163)
+	at org.springframework.jdbc.core.ArgumentPreparedStatementSetter.doSetValue(ArgumentPreparedStatementSetter.java:69)
+	at org.springframework.jdbc.core.ArgumentPreparedStatementSetter.setValues(ArgumentPreparedStatementSetter.java:50)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$0(JdbcTemplate.java:865)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:617)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:862)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:917)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:927)
+	at varausjarjestelma.HuoneDao.create(HuoneDao.java:22)
+	at varausjarjestelma.Varausjarjestelma.lisaaHuone(Varausjarjestelma.java:33)
+	at varausjarjestelma.Tekstikayttoliittyma.lisaaHuone(Tekstikayttoliittyma.java:66)
+	at varausjarjestelma.Tekstikayttoliittyma.kaynnista(Tekstikayttoliittyma.java:39)
+	at varausjarjestelma.VarausjarjestelmaSovellus.run(VarausjarjestelmaSovellus.java:29)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:813)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:797)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at varausjarjestelma.VarausjarjestelmaSovellus.main(VarausjarjestelmaSovellus.java:19)
+Caused by: java.io.NotSerializableException: org.springframework.jdbc.support.GeneratedKeyHolder
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1184)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348)
+	at org.h2.util.JdbcUtils.serialize(JdbcUtils.java:375)
+	... 26 more
+2019-02-21 12:14:45 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Serialization failed, cause: "java.io.NotSerializableException: org.springframework.jdbc.support.GeneratedKeyHolder" [90026-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357)
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.util.JdbcUtils.serialize(JdbcUtils.java:378)
+	at org.h2.value.ValueJavaObject.getNoCopy(ValueJavaObject.java:49)
+	at org.h2.value.DataType.convertToValue1(DataType.java:1162)
+	at org.h2.value.DataType.convertToValue(DataType.java:1044)
+	at org.h2.jdbc.JdbcPreparedStatement.setObject(JdbcPreparedStatement.java:534)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.setObject(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.StatementCreatorUtils.setValue(StatementCreatorUtils.java:411)
+	at org.springframework.jdbc.core.StatementCreatorUtils.setParameterValueInternal(StatementCreatorUtils.java:232)
+	at org.springframework.jdbc.core.StatementCreatorUtils.setParameterValue(StatementCreatorUtils.java:163)
+	at org.springframework.jdbc.core.ArgumentPreparedStatementSetter.doSetValue(ArgumentPreparedStatementSetter.java:69)
+	at org.springframework.jdbc.core.ArgumentPreparedStatementSetter.setValues(ArgumentPreparedStatementSetter.java:50)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$0(JdbcTemplate.java:865)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:617)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:862)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:917)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:927)
+	at varausjarjestelma.HuoneDao.create(HuoneDao.java:22)
+	at varausjarjestelma.Varausjarjestelma.lisaaHuone(Varausjarjestelma.java:33)
+	at varausjarjestelma.Tekstikayttoliittyma.lisaaHuone(Tekstikayttoliittyma.java:66)
+	at varausjarjestelma.Tekstikayttoliittyma.kaynnista(Tekstikayttoliittyma.java:39)
+	at varausjarjestelma.VarausjarjestelmaSovellus.run(VarausjarjestelmaSovellus.java:29)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:813)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:797)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at varausjarjestelma.VarausjarjestelmaSovellus.main(VarausjarjestelmaSovellus.java:19)
+Caused by: java.io.NotSerializableException: org.springframework.jdbc.support.GeneratedKeyHolder
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1184)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348)
+	at org.h2.util.JdbcUtils.serialize(JdbcUtils.java:375)
+	... 26 more
+2019-02-21 12:18:39 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Serialization failed, cause: "java.io.NotSerializableException: org.springframework.jdbc.support.GeneratedKeyHolder" [90026-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357)
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.util.JdbcUtils.serialize(JdbcUtils.java:378)
+	at org.h2.value.ValueJavaObject.getNoCopy(ValueJavaObject.java:49)
+	at org.h2.value.DataType.convertToValue1(DataType.java:1162)
+	at org.h2.value.DataType.convertToValue(DataType.java:1044)
+	at org.h2.jdbc.JdbcPreparedStatement.setObject(JdbcPreparedStatement.java:534)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.setObject(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.StatementCreatorUtils.setValue(StatementCreatorUtils.java:411)
+	at org.springframework.jdbc.core.StatementCreatorUtils.setParameterValueInternal(StatementCreatorUtils.java:232)
+	at org.springframework.jdbc.core.StatementCreatorUtils.setParameterValue(StatementCreatorUtils.java:163)
+	at org.springframework.jdbc.core.ArgumentPreparedStatementSetter.doSetValue(ArgumentPreparedStatementSetter.java:69)
+	at org.springframework.jdbc.core.ArgumentPreparedStatementSetter.setValues(ArgumentPreparedStatementSetter.java:50)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$0(JdbcTemplate.java:865)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:617)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:862)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:917)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:927)
+	at varausjarjestelma.HuoneDao.create(HuoneDao.java:22)
+	at varausjarjestelma.Varausjarjestelma.lisaaHuone(Varausjarjestelma.java:33)
+	at varausjarjestelma.Tekstikayttoliittyma.lisaaHuone(Tekstikayttoliittyma.java:66)
+	at varausjarjestelma.Tekstikayttoliittyma.kaynnista(Tekstikayttoliittyma.java:39)
+	at varausjarjestelma.VarausjarjestelmaSovellus.run(VarausjarjestelmaSovellus.java:29)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:813)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:797)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at varausjarjestelma.VarausjarjestelmaSovellus.main(VarausjarjestelmaSovellus.java:19)
+Caused by: java.io.NotSerializableException: org.springframework.jdbc.support.GeneratedKeyHolder
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1184)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348)
+	at org.h2.util.JdbcUtils.serialize(JdbcUtils.java:375)
+	... 26 more
+2019-02-21 12:24:48 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Serialization failed, cause: "java.io.NotSerializableException: org.springframework.jdbc.support.GeneratedKeyHolder" [90026-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357)
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.util.JdbcUtils.serialize(JdbcUtils.java:378)
+	at org.h2.value.ValueJavaObject.getNoCopy(ValueJavaObject.java:49)
+	at org.h2.value.DataType.convertToValue1(DataType.java:1162)
+	at org.h2.value.DataType.convertToValue(DataType.java:1044)
+	at org.h2.jdbc.JdbcPreparedStatement.setObject(JdbcPreparedStatement.java:534)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.setObject(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.StatementCreatorUtils.setValue(StatementCreatorUtils.java:411)
+	at org.springframework.jdbc.core.StatementCreatorUtils.setParameterValueInternal(StatementCreatorUtils.java:232)
+	at org.springframework.jdbc.core.StatementCreatorUtils.setParameterValue(StatementCreatorUtils.java:163)
+	at org.springframework.jdbc.core.ArgumentPreparedStatementSetter.doSetValue(ArgumentPreparedStatementSetter.java:69)
+	at org.springframework.jdbc.core.ArgumentPreparedStatementSetter.setValues(ArgumentPreparedStatementSetter.java:50)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$0(JdbcTemplate.java:865)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:617)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:862)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:917)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:927)
+	at varausjarjestelma.HuoneDao.create(HuoneDao.java:22)
+	at varausjarjestelma.Varausjarjestelma.lisaaHuone(Varausjarjestelma.java:33)
+	at varausjarjestelma.Tekstikayttoliittyma.lisaaHuone(Tekstikayttoliittyma.java:66)
+	at varausjarjestelma.Tekstikayttoliittyma.kaynnista(Tekstikayttoliittyma.java:39)
+	at varausjarjestelma.VarausjarjestelmaSovellus.run(VarausjarjestelmaSovellus.java:29)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:813)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:797)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at varausjarjestelma.VarausjarjestelmaSovellus.main(VarausjarjestelmaSovellus.java:19)
+Caused by: java.io.NotSerializableException: org.springframework.jdbc.support.GeneratedKeyHolder
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1184)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348)
+	at org.h2.util.JdbcUtils.serialize(JdbcUtils.java:375)
+	... 26 more
+2019-02-21 13:09:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Serialization failed, cause: "java.io.NotSerializableException: org.springframework.jdbc.support.GeneratedKeyHolder" [90026-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357)
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.util.JdbcUtils.serialize(JdbcUtils.java:378)
+	at org.h2.value.ValueJavaObject.getNoCopy(ValueJavaObject.java:49)
+	at org.h2.value.DataType.convertToValue1(DataType.java:1162)
+	at org.h2.value.DataType.convertToValue(DataType.java:1044)
+	at org.h2.jdbc.JdbcPreparedStatement.setObject(JdbcPreparedStatement.java:534)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.setObject(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.StatementCreatorUtils.setValue(StatementCreatorUtils.java:411)
+	at org.springframework.jdbc.core.StatementCreatorUtils.setParameterValueInternal(StatementCreatorUtils.java:232)
+	at org.springframework.jdbc.core.StatementCreatorUtils.setParameterValue(StatementCreatorUtils.java:163)
+	at org.springframework.jdbc.core.ArgumentPreparedStatementSetter.doSetValue(ArgumentPreparedStatementSetter.java:69)
+	at org.springframework.jdbc.core.ArgumentPreparedStatementSetter.setValues(ArgumentPreparedStatementSetter.java:50)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$0(JdbcTemplate.java:865)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:617)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:862)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:917)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:927)
+	at varausjarjestelma.HuoneDao.create(HuoneDao.java:22)
+	at varausjarjestelma.Varausjarjestelma.lisaaHuone(Varausjarjestelma.java:33)
+	at varausjarjestelma.Tekstikayttoliittyma.lisaaHuone(Tekstikayttoliittyma.java:67)
+	at varausjarjestelma.Tekstikayttoliittyma.kaynnista(Tekstikayttoliittyma.java:40)
+	at varausjarjestelma.VarausjarjestelmaSovellus.run(VarausjarjestelmaSovellus.java:29)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:813)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:797)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at varausjarjestelma.VarausjarjestelmaSovellus.main(VarausjarjestelmaSovellus.java:19)
+Caused by: java.io.NotSerializableException: org.springframework.jdbc.support.GeneratedKeyHolder
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1184)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348)
+	at org.h2.util.JdbcUtils.serialize(JdbcUtils.java:375)
+	... 26 more
+2019-02-21 13:14:34 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Serialization failed, cause: "java.io.NotSerializableException: org.springframework.jdbc.support.GeneratedKeyHolder" [90026-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357)
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.util.JdbcUtils.serialize(JdbcUtils.java:378)
+	at org.h2.value.ValueJavaObject.getNoCopy(ValueJavaObject.java:49)
+	at org.h2.value.DataType.convertToValue1(DataType.java:1162)
+	at org.h2.value.DataType.convertToValue(DataType.java:1044)
+	at org.h2.jdbc.JdbcPreparedStatement.setObject(JdbcPreparedStatement.java:534)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.setObject(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.StatementCreatorUtils.setValue(StatementCreatorUtils.java:411)
+	at org.springframework.jdbc.core.StatementCreatorUtils.setParameterValueInternal(StatementCreatorUtils.java:232)
+	at org.springframework.jdbc.core.StatementCreatorUtils.setParameterValue(StatementCreatorUtils.java:163)
+	at org.springframework.jdbc.core.ArgumentPreparedStatementSetter.doSetValue(ArgumentPreparedStatementSetter.java:69)
+	at org.springframework.jdbc.core.ArgumentPreparedStatementSetter.setValues(ArgumentPreparedStatementSetter.java:50)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$0(JdbcTemplate.java:865)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:617)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:862)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:917)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:927)
+	at varausjarjestelma.HuoneDao.create(HuoneDao.java:22)
+	at varausjarjestelma.Varausjarjestelma.lisaaHuone(Varausjarjestelma.java:33)
+	at varausjarjestelma.Tekstikayttoliittyma.lisaaHuone(Tekstikayttoliittyma.java:67)
+	at varausjarjestelma.Tekstikayttoliittyma.kaynnista(Tekstikayttoliittyma.java:40)
+	at varausjarjestelma.VarausjarjestelmaSovellus.run(VarausjarjestelmaSovellus.java:29)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:813)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:797)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at varausjarjestelma.VarausjarjestelmaSovellus.main(VarausjarjestelmaSovellus.java:19)
+Caused by: java.io.NotSerializableException: org.springframework.jdbc.support.GeneratedKeyHolder
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1184)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348)
+	at org.h2.util.JdbcUtils.serialize(JdbcUtils.java:375)
+	... 26 more
+2019-02-21 13:30:11 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "HUONEVARAUS" already exists; SQL statement:
+CREATE TABLE HuoneVaraus (id INTEGER NOT NULL, varaus_id INTEGER NOT NULL, huone_id INTEGER NOT NULL, PRIMARY KEY (id), FOREIGN KEY (varaus_id) REFERENCES Varaus (id), FOREIGN KEY (huone_id) REFERENCES Huone (id)); [42101-197]
+2019-02-21 13:58:00 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Table "HUONEVARAUS" already exists; SQL statement:
+CREATE TABLE HuoneVaraus (id INTEGER NOT NULL, varaus_id INTEGER NOT NULL, huone_id INTEGER NOT NULL, PRIMARY KEY (id), FOREIGN KEY (varaus_id) REFERENCES Varaus (id), FOREIGN KEY (huone_id) REFERENCES Huone (id)); [42101-197]
+2019-02-21 13:59:20 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "HUONE_NUMERO" not found; SQL statement:
+SELECT varaus_id, huone_numero FROM HuoneVaraus [42122-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:150)
+	at org.h2.command.dml.Select.prepare(Select.java:858)
+	at org.h2.command.Parser.prepareCommand(Parser.java:283)
+	at org.h2.engine.Session.prepareLocal(Session.java:611)
+	at org.h2.engine.Session.prepareCommand(Session.java:549)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1247)
+	at org.h2.jdbc.JdbcStatement.executeQuery(JdbcStatement.java:78)
+	at com.zaxxer.hikari.pool.ProxyStatement.executeQuery(ProxyStatement.java:111)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.executeQuery(HikariProxyStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate$1QueryStatementCallback.doInStatement(JdbcTemplate.java:439)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:376)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:452)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:462)
+	at varausjarjestelma.VarausDao.list(VarausDao.java:83)
+	at varausjarjestelma.Varausjarjestelma.listaaVaraukset(Varausjarjestelma.java:56)
+	at varausjarjestelma.Varausjarjestelma.haeVapaatHuoneet(Varausjarjestelma.java:67)
+	at varausjarjestelma.Tekstikayttoliittyma.haeHuoneita(Tekstikayttoliittyma.java:115)
+	at varausjarjestelma.Tekstikayttoliittyma.kaynnista(Tekstikayttoliittyma.java:44)
+	at varausjarjestelma.VarausjarjestelmaSovellus.run(VarausjarjestelmaSovellus.java:29)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:813)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:797)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at varausjarjestelma.VarausjarjestelmaSovellus.main(VarausjarjestelmaSovellus.java:19)
+2019-02-21 14:31:25 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Serialization failed, cause: "java.io.NotSerializableException: org.springframework.jdbc.support.GeneratedKeyHolder" [90026-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357)
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.util.JdbcUtils.serialize(JdbcUtils.java:378)
+	at org.h2.value.ValueJavaObject.getNoCopy(ValueJavaObject.java:49)
+	at org.h2.value.DataType.convertToValue1(DataType.java:1162)
+	at org.h2.value.DataType.convertToValue(DataType.java:1044)
+	at org.h2.jdbc.JdbcPreparedStatement.setObject(JdbcPreparedStatement.java:534)
+	at com.zaxxer.hikari.pool.HikariProxyPreparedStatement.setObject(HikariProxyPreparedStatement.java)
+	at org.springframework.jdbc.core.StatementCreatorUtils.setValue(StatementCreatorUtils.java:411)
+	at org.springframework.jdbc.core.StatementCreatorUtils.setParameterValueInternal(StatementCreatorUtils.java:232)
+	at org.springframework.jdbc.core.StatementCreatorUtils.setParameterValue(StatementCreatorUtils.java:163)
+	at org.springframework.jdbc.core.ArgumentPreparedStatementSetter.doSetValue(ArgumentPreparedStatementSetter.java:69)
+	at org.springframework.jdbc.core.ArgumentPreparedStatementSetter.setValues(ArgumentPreparedStatementSetter.java:50)
+	at org.springframework.jdbc.core.JdbcTemplate.lambda$update$0(JdbcTemplate.java:865)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:617)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:862)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:917)
+	at org.springframework.jdbc.core.JdbcTemplate.update(JdbcTemplate.java:927)
+	at varausjarjestelma.AsiakasDao.create(AsiakasDao.java:23)
+	at varausjarjestelma.Varausjarjestelma.lisaaVaraus(Varausjarjestelma.java:44)
+	at varausjarjestelma.Tekstikayttoliittyma.lisaaVaraus(Tekstikayttoliittyma.java:206)
+	at varausjarjestelma.Tekstikayttoliittyma.kaynnista(Tekstikayttoliittyma.java:46)
+	at varausjarjestelma.VarausjarjestelmaSovellus.run(VarausjarjestelmaSovellus.java:29)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:813)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:797)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at varausjarjestelma.VarausjarjestelmaSovellus.main(VarausjarjestelmaSovellus.java:19)
+Caused by: java.io.NotSerializableException: org.springframework.jdbc.support.GeneratedKeyHolder
+	at java.io.ObjectOutputStream.writeObject0(ObjectOutputStream.java:1184)
+	at java.io.ObjectOutputStream.writeObject(ObjectOutputStream.java:348)
+	at org.h2.util.JdbcUtils.serialize(JdbcUtils.java:375)
+	... 26 more
+2019-02-22 11:29:16 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Ambiguous column name "ID"; SQL statement:
+SELECT id, alkupvm, loppupvm, Asiakas.nimi, Asiakas.email, Asiakas.puhelin FROM Varaus JOIN Asiakas ON Asiakas.id = Varaus.asiakas_id; [90059-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.expression.ExpressionColumn.mapColumn(ExpressionColumn.java:127)
+	at org.h2.expression.ExpressionColumn.mapColumns(ExpressionColumn.java:97)
+	at org.h2.command.dml.Select.mapColumns(Select.java:1237)
+	at org.h2.command.dml.Select.init(Select.java:826)
+	at org.h2.command.Parser.parseSelect(Parser.java:1925)
+	at org.h2.command.Parser.parsePrepared(Parser.java:463)
+	at org.h2.command.Parser.parse(Parser.java:335)
+	at org.h2.command.Parser.parse(Parser.java:307)
+	at org.h2.command.Parser.prepareCommand(Parser.java:278)
+	at org.h2.engine.Session.prepareLocal(Session.java:611)
+	at org.h2.engine.Session.prepareCommand(Session.java:549)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1247)
+	at org.h2.jdbc.JdbcStatement.executeQuery(JdbcStatement.java:78)
+	at com.zaxxer.hikari.pool.ProxyStatement.executeQuery(ProxyStatement.java:111)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.executeQuery(HikariProxyStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate$1QueryStatementCallback.doInStatement(JdbcTemplate.java:439)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:376)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:452)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:462)
+	at varausjarjestelma.VarausDao.list(VarausDao.java:82)
+	at varausjarjestelma.Varausjarjestelma.tulostaVaraukset(Varausjarjestelma.java:190)
+	at varausjarjestelma.Tekstikayttoliittyma.listaaVaraukset(Tekstikayttoliittyma.java:233)
+	at varausjarjestelma.Tekstikayttoliittyma.kaynnista(Tekstikayttoliittyma.java:49)
+	at varausjarjestelma.VarausjarjestelmaSovellus.run(VarausjarjestelmaSovellus.java:29)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:813)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:797)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at varausjarjestelma.VarausjarjestelmaSovellus.main(VarausjarjestelmaSovellus.java:19)
+2019-02-22 11:44:36 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Column "NUMERO" not found; SQL statement:
+SELECT id, nimi, email, numero FROM Asiakas WHERE id = ? [42122-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:150)
+	at org.h2.command.dml.Select.prepare(Select.java:858)
+	at org.h2.command.Parser.prepareCommand(Parser.java:283)
+	at org.h2.engine.Session.prepareLocal(Session.java:611)
+	at org.h2.engine.Session.prepareCommand(Session.java:549)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1247)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:76)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:304)
+	at com.zaxxer.hikari.pool.ProxyConnection.prepareStatement(ProxyConnection.java:311)
+	at com.zaxxer.hikari.pool.HikariProxyConnection.prepareStatement(HikariProxyConnection.java)
+	at org.springframework.jdbc.core.JdbcTemplate$SimplePreparedStatementCreator.createPreparedStatement(JdbcTemplate.java:1557)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:615)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:669)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:700)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:712)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:768)
+	at varausjarjestelma.AsiakasDao.read(AsiakasDao.java:43)
+	at varausjarjestelma.VarausDao.lambda$read$1(VarausDao.java:54)
+	at org.springframework.jdbc.core.RowMapperResultSetExtractor.extractData(RowMapperResultSetExtractor.java:94)
+	at org.springframework.jdbc.core.RowMapperResultSetExtractor.extractData(RowMapperResultSetExtractor.java:61)
+	at org.springframework.jdbc.core.JdbcTemplate$1.doInPreparedStatement(JdbcTemplate.java:679)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:617)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:669)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:700)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:712)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:768)
+	at varausjarjestelma.VarausDao.read(VarausDao.java:53)
+	at varausjarjestelma.VarausDao.lambda$list$3(VarausDao.java:87)
+	at org.springframework.jdbc.core.RowMapperResultSetExtractor.extractData(RowMapperResultSetExtractor.java:94)
+	at org.springframework.jdbc.core.RowMapperResultSetExtractor.extractData(RowMapperResultSetExtractor.java:61)
+	at org.springframework.jdbc.core.JdbcTemplate$1QueryStatementCallback.doInStatement(JdbcTemplate.java:440)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:376)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:452)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:462)
+	at varausjarjestelma.VarausDao.list(VarausDao.java:87)
+	at varausjarjestelma.Varausjarjestelma.tulostaVaraukset(Varausjarjestelma.java:190)
+	at varausjarjestelma.Tekstikayttoliittyma.listaaVaraukset(Tekstikayttoliittyma.java:233)
+	at varausjarjestelma.Tekstikayttoliittyma.kaynnista(Tekstikayttoliittyma.java:49)
+	at varausjarjestelma.VarausjarjestelmaSovellus.run(VarausjarjestelmaSovellus.java:29)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:813)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:797)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at varausjarjestelma.VarausjarjestelmaSovellus.main(VarausjarjestelmaSovellus.java:19)
+2019-02-22 11:45:18 jdbc[5]: exception
+org.h2.jdbc.JdbcSQLException: Column "NUMERO" not found; SQL statement:
+SELECT id, nimi, email, numero FROM Asiakas WHERE id = ? [42122-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:150)
+	at org.h2.command.dml.Select.prepare(Select.java:858)
+	at org.h2.command.Parser.prepareCommand(Parser.java:283)
+	at org.h2.engine.Session.prepareLocal(Session.java:611)
+	at org.h2.engine.Session.prepareCommand(Session.java:549)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1247)
+	at org.h2.jdbc.JdbcPreparedStatement.<init>(JdbcPreparedStatement.java:76)
+	at org.h2.jdbc.JdbcConnection.prepareStatement(JdbcConnection.java:304)
+	at com.zaxxer.hikari.pool.ProxyConnection.prepareStatement(ProxyConnection.java:311)
+	at com.zaxxer.hikari.pool.HikariProxyConnection.prepareStatement(HikariProxyConnection.java)
+	at org.springframework.jdbc.core.JdbcTemplate$SimplePreparedStatementCreator.createPreparedStatement(JdbcTemplate.java:1557)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:615)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:669)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:700)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:712)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:768)
+	at varausjarjestelma.AsiakasDao.read(AsiakasDao.java:43)
+	at varausjarjestelma.VarausDao.lambda$read$1(VarausDao.java:54)
+	at org.springframework.jdbc.core.RowMapperResultSetExtractor.extractData(RowMapperResultSetExtractor.java:94)
+	at org.springframework.jdbc.core.RowMapperResultSetExtractor.extractData(RowMapperResultSetExtractor.java:61)
+	at org.springframework.jdbc.core.JdbcTemplate$1.doInPreparedStatement(JdbcTemplate.java:679)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:617)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:669)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:700)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:712)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:768)
+	at varausjarjestelma.VarausDao.read(VarausDao.java:53)
+	at varausjarjestelma.VarausDao.lambda$list$3(VarausDao.java:87)
+	at org.springframework.jdbc.core.RowMapperResultSetExtractor.extractData(RowMapperResultSetExtractor.java:94)
+	at org.springframework.jdbc.core.RowMapperResultSetExtractor.extractData(RowMapperResultSetExtractor.java:61)
+	at org.springframework.jdbc.core.JdbcTemplate$1QueryStatementCallback.doInStatement(JdbcTemplate.java:440)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:376)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:452)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:462)
+	at varausjarjestelma.VarausDao.list(VarausDao.java:87)
+	at varausjarjestelma.Varausjarjestelma.tulostaVaraukset(Varausjarjestelma.java:190)
+	at varausjarjestelma.Tekstikayttoliittyma.listaaVaraukset(Tekstikayttoliittyma.java:233)
+	at varausjarjestelma.Tekstikayttoliittyma.kaynnista(Tekstikayttoliittyma.java:49)
+	at varausjarjestelma.VarausjarjestelmaSovellus.run(VarausjarjestelmaSovellus.java:29)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:813)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:797)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at varausjarjestelma.VarausjarjestelmaSovellus.main(VarausjarjestelmaSovellus.java:19)
+2019-02-22 15:26:07 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "ALKUPVM" not found; SQL statement:
+SELECT id, alkupvm, loppupvm, asiakas_id FROM Asiakas [42122-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:150)
+	at org.h2.command.dml.Select.prepare(Select.java:858)
+	at org.h2.command.Parser.prepareCommand(Parser.java:283)
+	at org.h2.engine.Session.prepareLocal(Session.java:611)
+	at org.h2.engine.Session.prepareCommand(Session.java:549)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1247)
+	at org.h2.jdbc.JdbcStatement.executeQuery(JdbcStatement.java:78)
+	at com.zaxxer.hikari.pool.ProxyStatement.executeQuery(ProxyStatement.java:111)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.executeQuery(HikariProxyStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate$1QueryStatementCallback.doInStatement(JdbcTemplate.java:439)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:376)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:452)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:462)
+	at varausjarjestelma.VarausDao.list(VarausDao.java:80)
+	at varausjarjestelma.Varausjarjestelma.tulostaVaraukset(Varausjarjestelma.java:224)
+	at varausjarjestelma.Tekstikayttoliittyma.listaaVaraukset(Tekstikayttoliittyma.java:220)
+	at varausjarjestelma.Tekstikayttoliittyma.kaynnista(Tekstikayttoliittyma.java:49)
+	at varausjarjestelma.VarausjarjestelmaSovellus.run(VarausjarjestelmaSovellus.java:29)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:813)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:797)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at varausjarjestelma.VarausjarjestelmaSovellus.main(VarausjarjestelmaSovellus.java:19)
+2019-02-22 15:27:34 jdbc[3]: exception
+org.h2.jdbc.JdbcSQLException: Column "ALKUPVM" not found; SQL statement:
+SELECT id, alkupvm, loppupvm, asiakas_id FROM Asiakas [42122-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357)
+	at org.h2.message.DbException.get(DbException.java:179)
+	at org.h2.message.DbException.get(DbException.java:155)
+	at org.h2.expression.ExpressionColumn.optimize(ExpressionColumn.java:150)
+	at org.h2.command.dml.Select.prepare(Select.java:858)
+	at org.h2.command.Parser.prepareCommand(Parser.java:283)
+	at org.h2.engine.Session.prepareLocal(Session.java:611)
+	at org.h2.engine.Session.prepareCommand(Session.java:549)
+	at org.h2.jdbc.JdbcConnection.prepareCommand(JdbcConnection.java:1247)
+	at org.h2.jdbc.JdbcStatement.executeQuery(JdbcStatement.java:78)
+	at com.zaxxer.hikari.pool.ProxyStatement.executeQuery(ProxyStatement.java:111)
+	at com.zaxxer.hikari.pool.HikariProxyStatement.executeQuery(HikariProxyStatement.java)
+	at org.springframework.jdbc.core.JdbcTemplate$1QueryStatementCallback.doInStatement(JdbcTemplate.java:439)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:376)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:452)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:462)
+	at varausjarjestelma.VarausDao.list(VarausDao.java:80)
+	at varausjarjestelma.Varausjarjestelma.listaaVaraukset(Varausjarjestelma.java:105)
+	at varausjarjestelma.Varausjarjestelma.haeVapaatHuoneet(Varausjarjestelma.java:117)
+	at varausjarjestelma.Tekstikayttoliittyma.lisaaVaraus(Tekstikayttoliittyma.java:159)
+	at varausjarjestelma.Tekstikayttoliittyma.kaynnista(Tekstikayttoliittyma.java:47)
+	at varausjarjestelma.VarausjarjestelmaSovellus.run(VarausjarjestelmaSovellus.java:29)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:813)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:797)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at varausjarjestelma.VarausjarjestelmaSovellus.main(VarausjarjestelmaSovellus.java:19)
+2019-02-22 19:19:38 database: flush
+org.h2.message.DbException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/ilmoheiska/NetBeansProjects/mooc-tikape-k19-projekti/tikape_Varausjarjestelma/hotelliketju.mv.db [1.4.197/7]" [50000-197]
+	at org.h2.message.DbException.get(DbException.java:168)
+	at org.h2.message.DbException.convert(DbException.java:307)
+	at org.h2.mvstore.db.MVTableEngine$1.uncaughtException(MVTableEngine.java:95)
+	at org.h2.mvstore.MVStore.handleException(MVStore.java:2506)
+	at org.h2.mvstore.MVStore.panic(MVStore.java:383)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:364)
+	at org.h2.mvstore.MVStore$Builder.open(MVStore.java:2934)
+	at org.h2.mvstore.db.MVTableEngine$Store.open(MVTableEngine.java:155)
+	at org.h2.mvstore.db.MVTableEngine.init(MVTableEngine.java:100)
+	at org.h2.engine.Database.getPageStore(Database.java:2538)
+	at org.h2.engine.Database.open(Database.java:709)
+	at org.h2.engine.Database.openDatabase(Database.java:286)
+	at org.h2.engine.Database.<init>(Database.java:280)
+	at org.h2.engine.Engine.openSession(Engine.java:66)
+	at org.h2.engine.Engine.openSession(Engine.java:179)
+	at org.h2.engine.Engine.createSessionAndValidate(Engine.java:157)
+	at org.h2.engine.Engine.createSession(Engine.java:140)
+	at org.h2.engine.Engine.createSession(Engine.java:28)
+	at org.h2.engine.SessionRemote.connectEmbeddedOrServer(SessionRemote.java:351)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:124)
+	at org.h2.jdbc.JdbcConnection.<init>(JdbcConnection.java:103)
+	at org.h2.Driver.connect(Driver.java:69)
+	at com.zaxxer.hikari.util.DriverDataSource.getConnection(DriverDataSource.java:136)
+	at com.zaxxer.hikari.pool.PoolBase.newConnection(PoolBase.java:369)
+	at com.zaxxer.hikari.pool.PoolBase.newPoolEntry(PoolBase.java:198)
+	at com.zaxxer.hikari.pool.HikariPool.createPoolEntry(HikariPool.java:467)
+	at com.zaxxer.hikari.pool.HikariPool.checkFailFast(HikariPool.java:541)
+	at com.zaxxer.hikari.pool.HikariPool.<init>(HikariPool.java:115)
+	at com.zaxxer.hikari.HikariDataSource.getConnection(HikariDataSource.java:112)
+	at org.springframework.jdbc.datasource.DataSourceUtils.fetchConnection(DataSourceUtils.java:157)
+	at org.springframework.jdbc.datasource.DataSourceUtils.doGetConnection(DataSourceUtils.java:115)
+	at org.springframework.jdbc.datasource.DataSourceUtils.getConnection(DataSourceUtils.java:78)
+	at org.springframework.jdbc.core.JdbcTemplate.execute(JdbcTemplate.java:371)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:452)
+	at org.springframework.jdbc.core.JdbcTemplate.query(JdbcTemplate.java:462)
+	at varausjarjestelma.HuoneDao.list(HuoneDao.java:66)
+	at varausjarjestelma.Varausjarjestelma.listaaHuoneet(Varausjarjestelma.java:44)
+	at varausjarjestelma.Tekstikayttoliittyma.listaaHuoneet(Tekstikayttoliittyma.java:76)
+	at varausjarjestelma.Tekstikayttoliittyma.kaynnista(Tekstikayttoliittyma.java:43)
+	at varausjarjestelma.VarausjarjestelmaSovellus.run(VarausjarjestelmaSovellus.java:29)
+	at org.springframework.boot.SpringApplication.callRunner(SpringApplication.java:813)
+	at org.springframework.boot.SpringApplication.callRunners(SpringApplication.java:797)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:324)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1260)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1248)
+	at varausjarjestelma.VarausjarjestelmaSovellus.main(VarausjarjestelmaSovellus.java:19)
+Caused by: org.h2.jdbc.JdbcSQLException: General error: "java.lang.IllegalStateException: The file is locked: nio:/Users/ilmoheiska/NetBeansProjects/mooc-tikape-k19-projekti/tikape_Varausjarjestelma/hotelliketju.mv.db [1.4.197/7]" [50000-197]
+	at org.h2.message.DbException.getJdbcSQLException(DbException.java:357)
+	... 46 more
+Caused by: java.lang.IllegalStateException: The file is locked: nio:/Users/ilmoheiska/NetBeansProjects/mooc-tikape-k19-projekti/tikape_Varausjarjestelma/hotelliketju.mv.db [1.4.197/7]
+	at org.h2.mvstore.DataUtils.newIllegalStateException(DataUtils.java:870)
+	at org.h2.mvstore.FileStore.open(FileStore.java:173)
+	at org.h2.mvstore.MVStore.<init>(MVStore.java:350)
+	... 40 more
